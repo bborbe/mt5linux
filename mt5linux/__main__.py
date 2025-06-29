@@ -157,8 +157,7 @@ def main():
     server_code='server.py'
     port=args.port
     host=args.host
-    #
-    Popen(['mkdir',server_dir]).wait()
+    os.makedirs(server_dir, exist_ok=True)
     __generate_server_classic(os.path.join(server_dir,server_code))
     Popen([
             wine_cmd,
